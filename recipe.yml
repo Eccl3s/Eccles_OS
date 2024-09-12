@@ -21,24 +21,13 @@ stages:
     - lpkg --unlock
     - apt-get update
 
-  - name: zsh
-    type: apt
-    source:
-      packages:
-      - zsh
-
   - name: Fido2 
     type: apt
     source:
       packages:
       - pamu2fcfg 
       - libpam-u2f
-
-  - name: Change shell
-    type: shell
-    commands:
-    - chsh -s /usr/bin/zsh
-  
+ 
   - name: set-image-name-abroot
     type: includes
     includes:
