@@ -27,7 +27,14 @@ stages:
       packages:
       - pamu2fcfg 
       - libpam-u2f
-  
+ 
+  - name: Kitty 
+    type: apt
+    source:
+      packages:
+      - kitty
+      - imagemagick 
+
   - name: Virt-Manager
     type: apt
     source:
