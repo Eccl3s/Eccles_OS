@@ -59,6 +59,7 @@ stages:
   - name: cleanup
     type: shell
     commands:
+    - apt-get remove -y blackbox-terminal
     - apt-get autoremove -y
     - apt-get clean
     - lpkg --lock
