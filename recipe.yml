@@ -33,8 +33,6 @@ stages:
     source:
       packages:
       - kitty
-      - imagemagick
-      - fastfetch
 
   - name: Virt-Manager
     type: apt
