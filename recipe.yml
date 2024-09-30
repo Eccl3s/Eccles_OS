@@ -8,7 +8,7 @@ stages:
     maintainer: Eccles
   args:
     DEBIAN_FRONTEND: noninteractive # Set the image environment as non-interactive
-  
+
   # Commands to run first before building the modules
   runs:
     commands:
@@ -21,14 +21,14 @@ stages:
     - lpkg --unlock
     - apt-get update
 
-  - name: Fido2 
+  - name: Fido2
     type: apt
     source:
       packages:
-      - pamu2fcfg 
+      - pamu2fcfg
       - libpam-u2f
- 
-  - name: Kitty 
+
+  - name: Kitty
     type: apt
     source:
       packages:
@@ -38,6 +38,7 @@ stages:
     type: apt
     source:
       packages:
+      - firewall-config
       - qemu-kvm
       - qemu-system
       - qemu-utils
