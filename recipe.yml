@@ -33,17 +33,6 @@ stages:
       packages:
       - kitty
 
-  - name: Snap
-    type: apt
-    source:
-      packages:
-      - snapd --allow-change-held-packages
-
-  - name: install-deb 
-    type: includes
-    includes:
-      - modules/50-install-debs.yml 
-
   - name: cleanup
     type: shell
     commands:
