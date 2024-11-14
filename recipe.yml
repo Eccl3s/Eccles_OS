@@ -39,15 +39,6 @@ stages:
       packages:
       - snapd --allow-change-held-packages
 
-  - name: Snap-Install
-    type: shell
-    commands:
-    - snap install core
-    - snap install vlc
-    - snap install steam
-    - snap install libreoffice
-    - snap install brave
-
   - name: install-deb 
     type: includes
     includes:
