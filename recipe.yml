@@ -37,7 +37,7 @@ stages:
     type: apt
     source:
       packages:
-      - snapd
+      - snapd --allow-change-held-packages
 
   - name: Snap-Install
     type: shell
