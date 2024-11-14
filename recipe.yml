@@ -7,9 +7,8 @@ stages:
   labels:
     maintainer: Eccles
   args:
-    DEBIAN_FRONTEND: noninteractive # Set the image environment as non-interactive
+    DEBIAN_FRONTEND: noninteractive
 
-  # Commands to run first before building the modules
   runs:
     commands:
       - echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
@@ -34,10 +33,25 @@ stages:
       packages:
       - kitty
 
-  - name: set-image-name-abroot
+  - name: Snap
+    type: apt
+    source:
+      packages:
+      - snapd
+
+  - name: Snap-Install
+    type: shell
+    commands:
+    - snap install core
+    - snap install vlc
+    - snap install steam
+    - snap install libreoffice
+    - snap install brave
+
+  - name: install-deb 
     type: includes
     includes:
-      - modules/80-set-image-abroot-config.yml
+      - modules/50-install-debs.yml 
 
   - name: cleanup
     type: shell
